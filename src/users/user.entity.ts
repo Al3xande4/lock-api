@@ -1,5 +1,4 @@
 import {compare, hash} from 'bcryptjs';
-
 export class User{
     private _password: string;
     constructor(
@@ -30,5 +29,6 @@ export class User{
 
 export interface UserModel {
     username: string,
-    password: string
+    password: string,
+    locksId: number[]
 }
