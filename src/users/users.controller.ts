@@ -8,6 +8,7 @@ export const register = async (req: FastifyRequest<{Body: UserRegisterType}>, re
     if(await createUser(req.body)){
         res.status(200).send()
     };
+    res.status(400).send();
 };
 
 export const login = async (req: FastifyRequest<{Body: UserLoginType}>, res: FastifyReply) => {
