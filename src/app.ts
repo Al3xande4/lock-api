@@ -1,15 +1,15 @@
 import fastify from "fastify";
-import { loginRouter } from "./login/login.router";
+import { loginRouter } from "./users/users.router";
 import dotenv from 'dotenv';
 
 
 const init = async () => {
     const server = fastify({
-        logger: true,
+        logger: false,
     });
     
     dotenv.config();
-    server.register(loginRouter, {prefix: '/api/login'})
+    server.register(loginRouter, {prefix: '/api/'})
 
     server.listen({port: 4010}, (err, address) => {
         if (err) {
