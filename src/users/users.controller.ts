@@ -1,8 +1,8 @@
 import {FastifyRequest, FastifyReply} from 'fastify'
-import { UserLoginType } from './shemas/login.schema';
+import { UserLoginType } from './schemas/login.schema';
 import { createUser, validateUser } from './users.service';
 import { sign } from 'jsonwebtoken';
-import { UserRegisterType } from './shemas/register.schema';
+import { UserRegisterType } from './schemas/register.schema';
 
 export const register = async (req: FastifyRequest<{Body: UserRegisterType}>, res: FastifyReply) => {
     if(await createUser(req.body)){
@@ -33,7 +33,6 @@ const singJWT = (name: string, secret: string) => {
                 algorithm: 'HS256',
             },
             (err, token) => {
-                console.log('cool')
                 if(err){
                     reject(err);
                 }

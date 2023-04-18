@@ -1,7 +1,7 @@
 import { create, find } from "./users.repository";
-import { UserLoginType } from "./shemas/login.schema";
-import { User, UserModel } from "./user.entity";
-import { UserRegisterType } from "./shemas/register.schema";
+import { UserLoginType } from "./schemas/login.schema";
+import { User } from "./user.entity";
+import { UserRegisterType } from "./schemas/register.schema";
 
 export const validateUser = async ({username, password}: UserLoginType): Promise<boolean>=> {
     const existedUser = await find(username);
