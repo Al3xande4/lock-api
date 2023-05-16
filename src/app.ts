@@ -10,7 +10,6 @@ const init = async () => {
     });
     server.register(loginRouter, {prefix: '/api/'});
     server.register(locksRouter, {prefix: '/api/'});
-
     server.listen({port: 4010}, (err, address) => {
         if (err) {
             console.error(err)

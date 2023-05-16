@@ -2,22 +2,22 @@ import { FastifyReply, FastifyRequest } from "fastify";
 import { find } from "../users/users.repository";
 import { get } from "./locks.repository";
 import { IParams } from "./schemas/get.schema";
+import { SocketStream } from "@fastify/websocket";
 
-export const locks = async (req: FastifyRequest, res: FastifyReply) => {
+export const locks = async (connection: SocketStream, req: FastifyRequest) => {
     const user = await find(req.user);
     if(!user){
-        res.status(400).send({message: "No such user"});
+        connection.socket.send({message: "No such user"});
         return;
     }
     if(!user.locksId){
         return "No locks are available";
     }
     const locksAvailable = [];
-    console.log(user.locksId)
     for(const id of user?.locksId){
         locksAvailable.push(get(id));
     };
-    return locksAvailable;
+    connection.socket.send(locksAvailable)
 };
 
 export const openLock = async (req: FastifyRequest<{Params: IParams}>, res: FastifyReply) => {

@@ -4,11 +4,11 @@ import { UserLoginType, loginBody } from './schemas/login.schema';
 import { UserRegisterType, registerBody } from './schemas/register.schema';
 
 export const loginRouter = async (server: FastifyInstance) => {
-    await server.post<{Body: UserLoginType}>('/login',
+    server.post<{Body: UserLoginType}>('/login',
     {
         schema: loginBody
     }, login);
-    await server.post<{Body: UserRegisterType}>('/register',
+    server.post<{Body: UserRegisterType}>('/register',
     {
         schema: registerBody
     }, register)
