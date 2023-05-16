@@ -5,6 +5,10 @@ import { IParams } from "./schemas/get.schema";
 import { SocketStream } from "@fastify/websocket";
 
 export const locks = async (connection: SocketStream, req: FastifyRequest) => {
+    connection.socket.on('message', (message: string) => {
+        // Handle incoming messages
+        console.log('Received message:', message);
+    });
     const user = await find(req.user);
     if(!user){
         connection.socket.send({message: "No such user"});
