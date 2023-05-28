@@ -1,9 +1,8 @@
-import { Type, Static } from "@sinclair/typebox";
+import { Type, Static } from '@sinclair/typebox';
 
 export const loginBody = Type.Object({
-    username: Type.String(),
-    password: Type.String() 
+	username: Type.String(),
+	password: Type.String(),
 });
 
-
-export type UserLoginType = Static<typeof loginBody>; 
+export type UserLoginType = Static<typeof loginBody>;

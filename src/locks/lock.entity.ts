@@ -1,4 +1,4 @@
-export interface LockModel{
-    id: number;
-    isLocked: boolean;
+export interface LockModel {
+	id: number;
+	isLocked: boolean;
 }

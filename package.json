@@ -7,27 +7,36 @@
     "build": "tsc -p tsconfig.json ",
     "start": "node ./dist/app.js",
     "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src/**",
+    "lint:fix": "eslint ./src/** --fix" 
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fastify/cors": "^8.2.1",
     "@fastify/type-provider-typebox": "^3.0.0",
     "@fastify/websocket": "^8.0.0",
     "@sinclair/typebox": "^0.27.0",
     "@types/node": "^18.15.11",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
-    "fastify": "^4.15.0",
-    "jsonwebtoken": "^9.0.0",
-    "typescript": "^5.0.4"
+    "fastify": "^4.16.0",
+    "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "nodemon": "^2.0.22",
-    "ts-node": "^10.9.1"
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   }
 }
