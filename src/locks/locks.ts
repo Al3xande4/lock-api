@@ -2,10 +2,6 @@ import { LockModel } from './lock.entity';
 
 export const locks: LockModel[] = [
 	{
-		id: 0,
-		isLocked: true,
-	},
-	{
 		id: 1,
 		isLocked: true,
 	},
@@ -31,6 +27,10 @@ export const locks: LockModel[] = [
 	},
 	{
 		id: 7,
+		isLocked: true,
+	},
+	{
+		id: 8,
 		isLocked: true,
 	},
 ];
