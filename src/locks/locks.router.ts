@@ -6,6 +6,10 @@ import { IParams } from './schemas/get.schema';
 
 export const locksRouter = async (server: FastifyInstance): Promise<void> => {
 	server.get('locks', { onRequest: auth, preHandler: authGuard }, locks);
-	server.get<{ Params: IParams }>(':id/open', { onRequest: auth, preHandler: authGuard }, openLock);
+	server.get<{ Params: IParams }>(
+		'/lock/:id/open',
+		{ onRequest: auth, preHandler: authGuard },
+		openLock,
+	);
 	server.get('socket', { websocket: true }, socket);
 };

@@ -1,0 +1,38 @@
+.door-image {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cls-1, .cls-5 {
+  fill: none;
+}
+
+.cls-1, .cls-2, .cls-3, .cls-5, .cls-4 {
+  stroke: #1d1d1b;
+  stroke-miterlimit: 10;
+}
+
+.cls-1, .cls-2, .cls-3 {
+  stroke-width: 4px;
+}
+
+.cls-2, .cls-4 {
+  fill: #1d1d1b;
+}
+
+.ready {
+  fill: yellow;
+}
+
+.cls-3 {
+  fill: #fff;
+}
+
+.cls-5 {
+  stroke-width: 3px;
+}

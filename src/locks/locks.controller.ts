@@ -45,7 +45,9 @@ export const openLock = async (req: FastifyRequest<{ Params: IParams }>, res: Fa
 		return;
 	}
 	lock.isLocked = false;
-	ws.send(JSON.stringify(lock.id));
+	if (ws) {
+		ws.send(JSON.stringify(lock.id));
+	}
 	return { message: 'Door has been successfully opened', done: true };
 };
 

@@ -9,7 +9,7 @@
     "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src/**",
-    "lint:fix": "eslint ./src/** --fix" 
+    "lint:fix": "eslint ./src/** --fix"
   },
   "keywords": [],
   "author": "",
@@ -17,14 +17,16 @@
   "description": "",
   "dependencies": {
     "@fastify/cors": "^8.2.1",
+    "@fastify/static": "^6.10.2",
     "@fastify/type-provider-typebox": "^3.0.0",
-    "@fastify/websocket": "^8.0.0",
+    "@fastify/websocket": "^8.1.0",
     "@sinclair/typebox": "^0.27.0",
     "@types/node": "^18.15.11",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
     "fastify": "^4.16.0",
-    "jsonwebtoken": "^9.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "serve": "^14.2.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
