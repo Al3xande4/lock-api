@@ -31,7 +31,7 @@ const init = async (): Promise<void> => {
 	server.register(loginRouter, { prefix: '/api/' });
 	server.register(locksRouter, { prefix: '/api/' });
 
-	server.listen({ port: 4010 }, (err, address) => {
+	server.listen({ port: 4010, host: '0.0.0.0' }, (err, address) => {
 		if (err) {
 			console.error(err);
 			process.exit(1);

@@ -44,7 +44,6 @@ export const openLock = async (req: FastifyRequest<{ Params: IParams }>, res: Fa
 		res.status(400).send({ message: "You don't have access to open this door.", code: 400 });
 		return;
 	}
-	lock.isLocked = false;
 	if (ws) {
 		ws.send(JSON.stringify(lock.id));
 	}
